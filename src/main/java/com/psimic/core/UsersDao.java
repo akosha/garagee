@@ -9,6 +9,8 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+
 /**
  * Created by psimic on 31.03.15.
  */
@@ -24,8 +26,11 @@ public class UsersDao {
         ops.save(user);
     }
 
-    public User getUserById(String userId) {
-        Query query = new Query(Criteria.where("_id").is(userId));
-        return ops.findOne(query, User.class);
+    public HashMap<Long, Long> removeUser(String plates) {
+        Query query = new Query(Criteria.where("_id").is(plates));
+        User user = ops.findOne(query, User.class);
+        HashMap<Long, Long> result = user.getLocationInGarage();
+        ops.remove(user);
+        return result;
     }
 }

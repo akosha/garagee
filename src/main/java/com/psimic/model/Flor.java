@@ -2,6 +2,8 @@ package com.psimic.model;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 /**
  * Created by psimic on 31.03.15.
  */
@@ -9,11 +11,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Flor {
 
     private Long florId;
-    private Long florCapacity;
+    private List<ParkingSlot> parkingSlots;
 
-    public Flor(Long florId, Long florCapacity) {
+    public Flor(Long florId, List<ParkingSlot> parkingSlots) {
         this.florId = florId;
-        this.florCapacity = florCapacity;
+        this.parkingSlots = parkingSlots;
     }
 
     public Long getFlorId() {
@@ -24,19 +26,19 @@ public class Flor {
         this.florId = florId;
     }
 
-    public Long getFlorCapacity() {
-        return florCapacity;
+    public List<ParkingSlot> getParkingSlots() {
+        return parkingSlots;
     }
 
-    public void setFlorCapacity(Long florCapacity) {
-        this.florCapacity = florCapacity;
+    public void setParkingSlots(List<ParkingSlot> parkingSlots) {
+        this.parkingSlots = parkingSlots;
     }
 
     @Override
     public String toString() {
         return "Flor{" +
                 "florId=" + florId +
-                ", florCapacity=" + florCapacity +
+                ", parkingSlots=" + parkingSlots +
                 '}';
     }
 }

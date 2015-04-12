@@ -48,6 +48,13 @@ public class SettingsController {
         return new ModelAndView("userPage", "command", new UserDTO(" ", " "));
     }
 
+    @RequestMapping(value = "/removeCustomer", method = {RequestMethod.POST, RequestMethod.HEAD})
+    public ModelAndView removeCustomer(@ModelAttribute("SpringWeb")UserDTO userDTO,  ModelMap model) {
+        model.addAttribute("plates", userDTO.getPlates());
+        userService.removeUser(userDTO.getPlates());
+        return new ModelAndView("userPage", "command", new UserDTO(" ", " "));
+    }
+
     @RequestMapping(value = "/addCapacity", method = {RequestMethod.POST, RequestMethod.HEAD})
     public String setCapacity(@ModelAttribute("SpringWeb")GarageDTO garageDTO,
                               ModelMap model) {

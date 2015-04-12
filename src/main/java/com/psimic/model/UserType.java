@@ -9,7 +9,7 @@ import com.google.common.collect.Iterators;
 public enum UserType {
 
     CAR(1),
-    BYKE(2);
+    BIKE(2);
 
     private final int value;
 
