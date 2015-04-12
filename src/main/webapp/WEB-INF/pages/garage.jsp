@@ -12,8 +12,8 @@
 </head>
 <body>
 
-<h2>Set capacity</h2>
-<form:form method="POST" action="/mvc-dispatcher/addGarage">
+<h2>Set initial capacity of garage in flors and parking lots per flor</h2>
+<form:form method="POST" action="/addCapacity">
     <table>
         <tr>
             <td><form:label path="flors">Flors:</form:label></td>

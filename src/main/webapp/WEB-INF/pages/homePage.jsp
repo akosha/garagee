@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<h2>Manipulation page</h2>
+<h2>Home page</h2>
 <table>
     <tr>
         <td>Flors</td>
@@ -16,5 +16,16 @@
         <td>${parkingSlotsPerFlor}</td>
     </tr>
 </table>
+<div>
+    <form:form method="GET" action="/userPage">
+        <table>
+            <tr>
+                <td>
+                    <input type="submit" value="Add User"/>
+                </td>
+            </tr>
+        </table>
+    </form:form>
+</div>
 </body>
 </html>
