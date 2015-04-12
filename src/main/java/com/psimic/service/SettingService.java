@@ -18,4 +18,8 @@ public class SettingService {
         garageDao.setCapacity(Utils.toGarageFromGarageDTO(garageDTO));
     }
 
+    public Long getFreeSpaces(){
+        return garageDao.getCapacity();
+    }
+
 }

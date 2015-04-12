@@ -1,13 +1,10 @@
 package com.psimic.model;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-
 import java.util.List;
 
 /**
  * Created by psimic on 31.03.15.
  */
-@Document(collection = "flor")
 public class Flor {
 
     private Long florId;

@@ -5,6 +5,7 @@ import com.psimic.config.SpringMongoConfig;
 import com.psimic.model.Flor;
 import com.psimic.model.Garage;
 import com.psimic.model.ParkingSlot;
+import com.psimic.model.User;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.data.mongodb.core.MongoOperations;
@@ -27,6 +28,8 @@ public class GarageDao {
     MongoOperations ops = (MongoOperations) ctx.getBean(TEMPLATE);
 
     public void setCapacity(Garage garage){
+        ops.dropCollection(User.class);       //remove cars before works...
+        ops.dropCollection(ParkingSlot.class);  //remove lots before works...
         for (Flor flor : garage.getFlors()) {
             for (ParkingSlot slot: flor.getParkingSlots()) {
                 ops.save(slot);

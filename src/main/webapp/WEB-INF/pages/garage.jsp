@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<h2>Set initial capacity of garage in flors and parking lots per flor</h2>
+<h1>Set initial capacity of garage in flors and parking lots per flor</h1>
 <form:form method="POST" action="/addCapacity">
     <table>
         <tr>

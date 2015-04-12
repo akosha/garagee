@@ -33,4 +33,8 @@ public class UsersDao {
         ops.remove(user);
         return result;
     }
+
+    public User getUser(String plates) {
+        return ops.findOne(Query.query(Criteria.where("_id").is(plates)), User.class);
+    }
 }
